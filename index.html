@@ -3,12 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Wedding Invitation Card Builder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
-    hi
 
+<body>
+    <main class="main-container">
+        <section class="slide-main-container">
+            <div class="slide-header">
+                <h2>Card Preview</h2>
+                <input type="file" id="bg-image-upload" accept="image/*" style="display: none;">
+                <button class="upload-btn" id="upload-bg-btn">Upload Background</button>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card" id="card-1"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card" id="card-2"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card" id="card-3"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+        <aside class="aside-main-container">
+            <div class="slide-indicator" id="slide-indicator">Editing: Slide 1</div>
+            
+            <div class="control-section">
+                <h3>Text Content</h3>
+                <div class="control-group">
+                    <label for="text-input">Text</label>
+                    <textarea id="text-input" rows="3" placeholder="Enter your text here"></textarea>
+                </div>
+                <button id="add-text-btn" class="btn-primary">Add Text</button>
+            </div>
+
+            <div class="control-section">
+                <h3>Text Elements</h3>
+                <div class="text-elements-list" id="text-elements-list"></div>
+            </div>
+
+            <div class="control-section">
+                <h3>Font Settings</h3>
+                <div class="control-group">
+                    <label for="font-family">Font Family</label>
+                    <select id="font-family">
+                        <option value="'Playfair Display', serif">Playfair Display</option>
+                        <option value="'Great Vibes', cursive">Great Vibes</option>
+                        <option value="'Open Sans', sans-serif">Open Sans</option>
+                        <option value="Arial, sans-serif">Arial</option>
+                        <option value="Georgia, serif">Georgia</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="font-size">Font Size</label>
+                    <input type="range" id="font-size" min="10" max="72" value="24">
+                    <span id="font-size-value">24px</span>
+                </div>
+                <div class="control-group">
+                    <label>Font Style</label>
+                    <div class="font-options">
+                        <div class="font-option active" data-style="normal">Regular</div>
+                        <div class="font-option" data-style="italic">Italic</div>
+                        <div class="font-option" data-style="bold">Bold</div>
+                        <div class="font-option" data-style="bold italic">Bold Italic</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Text Color & Alignment</h3>
+                <div class="control-group">
+                    <label for="text-color">Text Color</label>
+                    <input type="color" id="text-color" class="color-input" value="#000000">
+                </div>
+                <div class="control-group">
+                    <label>Text Alignment</label>
+                    <div class="alignment-options">
+                        <div class="alignment-option" data-align="left">Left</div>
+                        <div class="alignment-option active" data-align="center">Center</div>
+                        <div class="alignment-option" data-align="right">Right</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Advanced Options</h3>
+                <div class="control-group">
+                    <label for="line-height">Line Height</label>
+                    <input type="range" id="line-height" min="1" max="3" step="0.1" value="1.5">
+                    <span id="line-height-value">1.5</span>
+                </div>
+                <div class="control-group">
+                    <label for="letter-spacing">Letter Spacing</label>
+                    <input type="range" id="letter-spacing" min="-2" max="10" value="0">
+                    <span id="letter-spacing-value">0px</span>
+                </div>
+            </div>
+
+            <button id="reset-btn" class="btn-secondary">Reset Current Slide</button>
+        </aside>
+    </main>
     <script src="./script.js"></script>
+   
 </body>
 </html>
